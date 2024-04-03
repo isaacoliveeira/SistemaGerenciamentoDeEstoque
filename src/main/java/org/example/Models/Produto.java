@@ -1,26 +1,34 @@
 package org.example.Models;
-
-public class produtoCadastro {
+public class Produto {
     private String Nome;
-    private Integer id;
+    private Integer cod;
     private String DataValidade;
     private Integer Quantidade;
     private Integer Preco;
     private String DataEntrada;
-    private String DataSaida;
     private String NotasAdicionais;
     private String Tipo;
+    private String Fornecedor;
 
-    public produtoCadastro(String nome, Integer id, String dataValidade, Integer quantidade, Integer preco, String dataEntrada, String dataSaida, String notasAdicionais, String tipo) {
+    public Produto(String nome, Integer cod, String dataValidade, Integer quantidade, Integer preco, String dataEntrada, String dataSaida, String notasAdicionais, String tipo, String fornecedor) {
         Nome = nome;
-        this.id = id;
+        this.cod = cod;
         DataValidade = dataValidade;
         Quantidade = quantidade;
         Preco = preco;
         DataEntrada = dataEntrada;
-        DataSaida = dataSaida;
         NotasAdicionais = notasAdicionais;
         Tipo = tipo;
+        Fornecedor = fornecedor;
+    }
+
+
+    public String getDataValidade() {
+        return DataValidade;
+    }
+
+    public void setDataValidade(String dataValidade) {
+        DataValidade = dataValidade;
     }
 
     public String getTipo() {
@@ -29,14 +37,6 @@ public class produtoCadastro {
 
     public void setTipo(String tipo) {
         Tipo = tipo;
-    }
-
-    public String getDataValidade() {
-        return DataValidade;
-    }
-
-    public void setDataValidade(String dataValidade) {
-        DataValidade = dataValidade;
     }
 
     public Integer getQuantidade() {
@@ -62,26 +62,13 @@ public class produtoCadastro {
     public void setDataEntrada(String dataEntrada) {
         DataEntrada = dataEntrada;
     }
-
-    public String getDataSaida() {
-        return DataSaida;
-    }
-
-    public void setDataSaida(String dataSaida) {
-        DataSaida = dataSaida;
-    }
-
+    
     public String getNotasAdicionais() {
         return NotasAdicionais;
     }
 
     public void setNotasAdicionais(String notasAdicionais) {
         NotasAdicionais = notasAdicionais;
-    }
-
-    public produtoCadastro(String nome, Integer id) {
-        Nome = nome;
-        this.id = id;
     }
 
     public String getNome() {
@@ -92,11 +79,19 @@ public class produtoCadastro {
         Nome = nome;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getCod() {
+        return cod;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setCod(Integer cod) {
+        this.cod = cod;
+    }
+
+    public String getFornecedor() {
+        return Fornecedor;
+    }
+
+    public void setFornecedor(String fornecedor) {
+        Fornecedor = fornecedor;
     }
 }
