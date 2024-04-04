@@ -1,4 +1,7 @@
 package org.example.Models;
+
+import java.util.Objects;
+
 public class Produto {
     private String Nome;
     private Integer cod;
@@ -6,18 +9,25 @@ public class Produto {
     private Integer Quantidade;
     private Integer Preco;
     private String DataEntrada;
-    private String NotasAdicionais;
     private String Tipo;
     private String Fornecedor;
 
-    public Produto(String nome, Integer cod, String dataValidade, Integer quantidade, Integer preco, String dataEntrada, String dataSaida, String notasAdicionais, String tipo, String fornecedor) {
+    public Produto(String nome, Integer cod, String dataValidade, Integer quantidade, Integer preco, String dataEntrada, String tipo, String fornecedor) {
+        Objects.requireNonNull(nome, "O Nome da Empresa não pode ser nulo");
+        Objects.requireNonNull(cod, "O Código não pode ser nulo");
+        Objects.requireNonNull(dataValidade, "A Data de validade não pode ser nula");
+        Objects.requireNonNull(quantidade, "A Quantidade não pode ser nula");
+        Objects.requireNonNull(preco, "O Preço não pode ser nulo");
+        Objects.requireNonNull(dataEntrada, "A Data de Entrada não pode ser nula");
+        Objects.requireNonNull(tipo, "O tipo não pode ser nulo");
+        Objects.requireNonNull(fornecedor, "O Fornecedor não pode ser nulo");
+
         Nome = nome;
         this.cod = cod;
         DataValidade = dataValidade;
         Quantidade = quantidade;
         Preco = preco;
         DataEntrada = dataEntrada;
-        NotasAdicionais = notasAdicionais;
         Tipo = tipo;
         Fornecedor = fornecedor;
     }
@@ -61,14 +71,6 @@ public class Produto {
 
     public void setDataEntrada(String dataEntrada) {
         DataEntrada = dataEntrada;
-    }
-    
-    public String getNotasAdicionais() {
-        return NotasAdicionais;
-    }
-
-    public void setNotasAdicionais(String notasAdicionais) {
-        NotasAdicionais = notasAdicionais;
     }
 
     public String getNome() {
