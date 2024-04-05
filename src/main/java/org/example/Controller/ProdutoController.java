@@ -36,9 +36,9 @@ public class ProdutoController {
         }
     }
 
-    public void editarProduto(Integer cod, String novoNome, Integer novoPreco, Integer novaQuantidade) {
+    public void editarProduto(Integer cod, String novoNome, Double novoPreco, Integer novaQuantidade) {
         for ( Produto produto : produtos) {
-            if (produto.getCod() == cod) {
+            if (produto.getCod().equals(cod)) {
                 produto.setNome(novoNome);
                 produto.setPreco(novoPreco);
                 produto.setQuantidade(novaQuantidade);
