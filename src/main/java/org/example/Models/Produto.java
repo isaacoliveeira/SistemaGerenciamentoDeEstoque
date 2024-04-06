@@ -13,14 +13,6 @@ public class Produto {
     private String Fornecedor;
 
     public Produto(String nome, Integer cod, String dataValidade, Integer quantidade, Double preco, String dataEntrada, String tipo, String fornecedor) {
-        Objects.requireNonNull(nome, "O Nome da Empresa não pode ser nulo");
-        Objects.requireNonNull(cod, "O Código não pode ser nulo");
-        Objects.requireNonNull(dataValidade, "A Data de validade não pode ser nula");
-        Objects.requireNonNull(quantidade, "A Quantidade não pode ser nula");
-        Objects.requireNonNull(preco, "O Preço não pode ser nulo");
-        Objects.requireNonNull(dataEntrada, "A Data de Entrada não pode ser nula");
-        Objects.requireNonNull(tipo, "O tipo não pode ser nulo");
-        Objects.requireNonNull(fornecedor, "O Fornecedor não pode ser nulo");
 
         Nome = nome;
         this.cod = cod;
@@ -99,7 +91,7 @@ public class Produto {
 
     @Override
     public String toString() {
-        return String.format("Nome: %s - Código: %s - Preço: %s - Tipo: %s - Quantidade: %s - Fornecedor: %s - Data de Entrada: %s - Data de Validade: %s",
+        return String.format("Nome: %s - Código: %s - Preço: %s - Tipo: %s - Quantidade: %s - Fornecedor: %s - Data de Entrada: %s - Data de Validade: %s\n",
                 getNome(), getCod(), getPreco(), getTipo(), getQuantidade(),getFornecedor(),getDataEntrada(),getDataValidade());
     }
 }
