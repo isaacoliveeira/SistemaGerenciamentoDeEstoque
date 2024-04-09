@@ -13,7 +13,6 @@ public class ProdutoRepository {
     }
     public void adicionarProduto(Produto produto) {
         produtos.add(produto);
-        System.out.println("O produto foi adicionado com sucesso");
     }
 
     public void adicionarQuant(Integer cod, Integer quantidade) {

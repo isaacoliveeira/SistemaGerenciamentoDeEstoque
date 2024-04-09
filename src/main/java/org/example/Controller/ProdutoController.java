@@ -19,7 +19,5 @@ public class ProdutoController {
     public void removerProduto(Integer cod, Integer quantidade) {
         produtoRepository.removerProduto(cod, quantidade);
     }
-     public void editarProduto(Integer cod, String Nome, Double novoPreco) {
-        produtoRepository.editarProduto(cod ,Nome, novoPreco);
-     }
+    public void editarProduto(Integer cod, String Nome, Double novoPreco) { produtoRepository.editarProduto(cod ,Nome, novoPreco); }
 }
