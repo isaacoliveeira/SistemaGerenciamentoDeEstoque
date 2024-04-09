@@ -18,14 +18,14 @@ public class EmpresaRepository {
                 return true; // Se encontrar uma empresa com o mesmo CNPJ, retorna true
             }
         }
-        return false; // Se não encontrar nenhuma empresa com o mesmo CNPJ, retorna false
+        return false;// Se não encontrar nenhuma empresa com o mesmo CNPJ, retorna false
     }
 
-    public void adicionarEmpresa(Empresa empresa) {
-        if (!empresaExiste(empresa.getCNPJ())) { // Verifica se a empresa já existe
-            empresas.add(empresa); // Adiciona a empresa somente se não existir uma com o mesmo CNPJ
+    public void cadastrarEmpresa(Empresa empresa) throws CNPJException {
+        if (empresaExiste(empresa.getCNPJ())) { // Verifica se a empresa já existe
+            throw new CNPJException("Já existe uma empresa com o mesmo CNPJ.");
         } else {
-            System.out.println("Já existe uma empresa com o mesmo CNPJ."); // Mensagem de erro caso a empresa já exista
+            empresas.add(empresa);
         }
     }
 
@@ -43,6 +43,6 @@ public class EmpresaRepository {
                 return empresa;
             }
         }
-        return null; // Retorna null se a empresa não for encontrada
+        return null;
     }
 }
