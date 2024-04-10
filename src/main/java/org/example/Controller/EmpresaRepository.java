@@ -37,12 +37,12 @@ public class EmpresaRepository {
         return empresas;
     }
 
-    public Empresa buscarEmpresaPorCNPJ(String CNPJ) {
+    public Empresa buscarEmpresaPorCNPJ(String CNPJ) throws CNPJException {
         for (Empresa empresa : empresas) {
             if (empresa.getCNPJ().equals(CNPJ)) {
                 return empresa;
             }
         }
-        return null;
+        throw new CNPJException("Empresa não encontrada para o CNPJ: " + CNPJ);
     }
 }
