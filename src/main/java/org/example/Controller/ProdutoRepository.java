@@ -16,10 +16,10 @@ public class ProdutoRepository {
     public boolean produtoExiste(Integer cod) {
         for (Produto produto : produtos) {
             if (produto.getCod().equals(cod)) {
-                return true; // Se encontrar uma empresa com o mesmo CNPJ, retorna true
+                return true;
             }
         }
-        return false;// Se não encontrar nenhuma empresa com o mesmo CNPJ, retorna false
+        return false;
     }
     public void adicionarProduto(Produto produto) {
         produtos.add(produto);
@@ -55,15 +55,16 @@ public class ProdutoRepository {
     }
 
     public void editarProduto(Integer cod, String Nome, Double novoPreco) {
-        for ( Produto produto : produtos) {
+        for (Produto produto : produtos) {
             if (produto.getCod().equals(cod)) {
                 produto.setNome(Nome);
                 produto.setPreco(novoPreco);
                 return;
             }
         }
-        System.out.println("Produto não encontrado");
+        throw new RuntimeException("Produto não encontrado");
     }
+
 
     public Produto recuperarProduto(Integer cod) {
         for (Produto p : produtos) {
