@@ -10,6 +10,8 @@ public class ProdutoController {
     public ProdutoController(ProdutoRepository produtoRepository) {
         this.produtoRepository = produtoRepository;
     }
+
+    public boolean produtoExiste(Integer cod){ return produtoRepository.produtoExiste(cod);}
     public void adicionarProduto(Produto produto) {
         produtoRepository.adicionarProduto(produto);
     }

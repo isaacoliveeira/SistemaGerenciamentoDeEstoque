@@ -52,7 +52,6 @@ public class AppTestEmpresa {
     @Test
     void naoDeveHaverInteracaoComORepositoryforNull() {
         assertThrows(CNPJException.class, () -> controller.buscarEmpresaPorCNPJ(null));
-
         verifyNoInteractions(repository);
     }
 
@@ -67,11 +66,5 @@ public class AppTestEmpresa {
         verify(repository).buscarEmpresaPorCNPJ(empresa.getCNPJ());
 
     }
-
-
-
-
-
-
 
 }

@@ -1,5 +1,6 @@
 package org.example.Controller;
 
+import org.example.Models.Empresa;
 import org.example.Models.Produto;
 
 import java.util.ArrayList;
@@ -10,6 +11,15 @@ public class ProdutoRepository {
     private List<Produto> produtos;
     public ProdutoRepository() {
         produtos = new ArrayList<>();
+    }
+
+    public boolean produtoExiste(Integer cod) {
+        for (Produto produto : produtos) {
+            if (produto.getCod().equals(cod)) {
+                return true; // Se encontrar uma empresa com o mesmo CNPJ, retorna true
+            }
+        }
+        return false;// Se não encontrar nenhuma empresa com o mesmo CNPJ, retorna false
     }
     public void adicionarProduto(Produto produto) {
         produtos.add(produto);
