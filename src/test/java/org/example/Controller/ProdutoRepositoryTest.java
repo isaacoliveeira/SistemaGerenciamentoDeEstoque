@@ -28,7 +28,7 @@ class ProdutoRepositoryTest {
     void produtoExiste() {
         Produto produto = new Produto("Macarrão", 14526, "14/05/2025",4, 14.00, "14/02/2024", "Alimento", "Fortaleza");
         produtoRepository.adicionarProduto(produto);
-        assertFalse(produtoRepository.produtoExiste(14256));
+        assertTrue(produtoRepository.produtoExiste(14526));
         assertFalse(produtoRepository.produtoExiste(14265));
     }
 
