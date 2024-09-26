@@ -1,4 +1,4 @@
-package org.example.Controller;
+package org.example.Validations;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -6,9 +6,7 @@ import java.time.format.DateTimeParseException;
 
 public class DataValidator {
 
-    private DataValidator() {
-
-    }
+    private DataValidator() {}
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public static String validarData(String data) throws DataInvalidaException {

@@ -1,4 +1,4 @@
-package org.example.Controller;
+package org.example.Validations;
 
 public class DataInvalidaException extends Exception {
     public DataInvalidaException(String mensagem) {
